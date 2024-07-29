@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let bgElement = document.getElementById("mainBackground")
 
   bgElement.style.backgroundColor = "#ffffff";
+  bgElement.style.marginTop = "20px";
+  bgElement.style.marginBottom = "20px";
+
   // Event listener for input changes
   inputField.addEventListener("input", function() {
     let input = inputField.value;
@@ -71,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
       bgElement.style.backgroundColor = "#72b043";
     }
 
-    outputDiv.textContent = "Password Score: " + scoreString + "\n\n"
+    outputDiv.textContent = "\n" + "Password Score: " + scoreString + "\n\n"
     + "Password Length: " + input.length + "\n"
     + "Contains Numbers: " + containsNumbers + "\n"
     + "Contains Symbols: " + containsSymbols + "\n"
@@ -83,8 +86,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (input.length === 0) {
       bgElement.style.backgroundColor = "#ffffff";
-      outputDiv.textContent = "Enter your password and check your score.";
+      outputDiv.textContent = "";
     }
 
   });
 });
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("mySidebar").classList.add("main-background");
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("mySidebar").classList.remove("main-background");
+  document.getElementById("myOverlay").style.display = "none";
+}
