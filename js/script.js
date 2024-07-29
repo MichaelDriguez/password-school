@@ -62,16 +62,16 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (strengthScore <= 4) {
       // 3 or 4
       scoreString = "Moderate"
-      bgElement.style.backgroundColor = "#f37324";
+      bgElement.style.backgroundColor = "#f8cc1b";
     } else if (strengthScore === 5) {
       // Exactly 5
       scoreString = "Strong"
-      bgElement.style.backgroundColor = "#f8cc1b";
+      bgElement.style.backgroundColor = "#72b043";
       outputDiv.style.color = 'black';
     } else if (strengthScore >= 6) {
       // 6 or greater
       scoreString = "Very Strong"
-      bgElement.style.backgroundColor = "#72b043";
+      bgElement.style.backgroundColor = "#4e792e";
     }
 
     outputDiv.textContent = "\n" + "Password Score: " + scoreString + "\n\n"
