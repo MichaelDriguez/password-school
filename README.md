@@ -10,7 +10,7 @@ A website that includes a password strength checker and a password generator. Th
 
 ## Disclaimers
 
-These disclaimers regard the practical usage of the password strength checker and secure password generator.
+These disclaimers regard the practical usage of the password strength checker and secure password generator.<br>
 ***Disclaimer: Password Strength Checker:***
 - This tool is for **educational purposes only.**
 - Although this password strength checker does not store, log, or remember the passwords that you enter, by using this tool, you acknowledge that I am not liable by any issues that may arise from the use of passwords assessed by this checker.
