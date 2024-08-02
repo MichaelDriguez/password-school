@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let input = inputField.value;
 
     let strengthScore = 0
-    let scoreString
+    let scoreString, suggestions = "This password needs: \n\n"
 
-    let isDefaultPassword = false
     let containsNumbers = false
     let containsSymbols = false
     let containsUppercase = false
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
       strengthScore++;
     } else if (input.length > 0) {
       strengthScore--;
+      suggestions += "\tA length of at least 12 characters.\n";
     } else {
       outputDiv.textContent = "";
     }
@@ -35,25 +35,25 @@ document.addEventListener("DOMContentLoaded", function() {
     if (/[0-9]/g.test(input)) {
       strengthScore++;
       containsNumbers = true;
-    }
+    } else suggestions += "\tAt least one number.\n";
 
     // Contains Symbols?
     if (/[^a-zA-Z0-9]/g.test(input)) {
       strengthScore++;
       containsSymbols = true;
-    }
+    } else suggestions += "\tAt least one symbol.\n";
 
     // Contains Uppercase Letters?
     if (/[A-Z]/g.test(input)) {
       strengthScore++;
       containsUppercase = true;
-    }
+    } else suggestions += "\tAt least one uppercase letter.\n";
 
     // Contains Lowercase Letters?
     if (/[a-z]/g.test(input)) {
       strengthScore++;
       containsLowercase = true;
-    }
+    } else suggestions += "\tAt least one lowercase letter.\n";
 
     if (strengthScore < 3) {
       // 2 or less
@@ -72,14 +72,16 @@ document.addEventListener("DOMContentLoaded", function() {
       // 6 or greater
       scoreString = "Very Strong"
       bgElement.style.backgroundColor = "#4e792e";
+      suggestions = "";
     }
 
-    outputDiv.textContent = "\n" + "Password Score: " + scoreString + "\n\n"
-    + "Password Length: " + input.length + "\n"
-    + "Contains Numbers: " + containsNumbers + "\n"
-    + "Contains Symbols: " + containsSymbols + "\n"
-    + "Contains Uppercase Letters: " + containsUppercase + "\n"
-    + "Contains Lowercase Letters: " + containsLowercase + "\n";
+    if (containsNumbers && containsSymbols && containsUppercase &&
+      containsLowercase && input.length >= 12) {
+      suggestions = "";
+    }
+
+    outputDiv.textContent = "\n" + "Password Score: " + scoreString + "\n"
+    + "Password Length: " + input.length + "\n\n" + suggestions;
 
     outputDiv.style.whiteSpace = "pre-wrap";
     outputDiv.style.color = 'white';
