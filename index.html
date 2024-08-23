@@ -1,80 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home / Disclaimer</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css" id="theme">
-  <link rel="icon" href="css/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home / Disclaimer</title>
+  <link href="./src/output.css" rel="stylesheet">
 </head>
-<body class="w3-content main-background w3-animate-opacity" style="max-width:1200px">
+<body class="bg-green-4">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large hover w3-display-topright"
-    style="padding: 12px 12px"></i>
-    <br/>
-    <h3>Password School</h3>
-  </div>
-  <hr/>
-  <div class="w3-large">
-    <a href="index.html" class="w3-bar-item hover">Home / Disclaimer</a>
-    <a href="checker.html" class="w3-bar-item hover">Password Strength Checker</a>
-    <a href="generator.html" class="w3-bar-item hover">Password Generator</a>
-    <hr/>
-    <a href="help.html" class="w3-bar-item hover">How to Make Your Passwords Secure</a>
-    <hr/>
-    <a href="#footer" class="w3-bar-item hover w3-padding">Contact</a>
-  </div>
+<nav class="border-beige border-2 hidden fixed top-10 lg:top-20 right-0 bg-green-3 text-xl lg:text-3xl text-green-1 text-right mr-8 mt-16 w-[225px] lg:w-[300px] p-4" id="mySidebar">
+  <h2><b>Password School</b></h2> <hr class="flex justify-end border-2 border-solid border-beige my-3"/>
+  <a href="index.html" class="hover:text-beige">Home / Disclaimer</a> <br class="mb-3"/>
+  <a href="./src/html/checker.html" class="hover:text-beige">Password Strength Checker</a> <br class="mb-3"/>
+  <a href="./src/html/generator.html" class="hover:text-beige">Password Generator</a> <br/>
+
+  <hr class="flex justify-end border-2 border-solid border-beige my-3"/>
+
+  <a href="./src/html/help.html" class="hover:text-beige">How to Make Your Passwords Secure</a> <br/>
+
+  <hr class="flex justify-end border-2 border-solid border-beige my-3"/>
+
+  <a href="./src/html/contact.html" class="hover:text-beige">Contact</a> <br/>
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge main-background">
-  <div class="w3-bar-item w3-padding-24">PS</div>
-  <a href="javascript:void(0)" class="w3-bar-item hover navbar
-    w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+<header class="fixed top-0 right-0 bg-green-4 w-full z-50 text-3xl text-green-1 text-right mr-8 pt-8 pb-8">
+  <a href="javascript:void(0)" class="text-right hover:text-beige" onclick="toggleSidebar()">☰</a>
 </header>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()"
-     style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <div class="bg-green-4 p-0 text-green-1">
+    <h1 class="text-4xl lg:text-5xl text-left font-bold ml-10 lg:ml-80 mr-10 mt-10">
+      <br> <br> <br> <br> <br> Welcome to Password School</h1>
+    <br> <hr class="border-2 border-solid border-beige my-3 mx-auto ml-10 lg:ml-80 w-1/2"/>
+    <p class="bg-green-4 text-xl lg:text-2xl text-left text-beige mt-6 mb-6 ml-10 mr-10 lg:ml-80 lg:mr-96">
+      Password school is a website created by Michael Rodriguez to inform users about what makes
+      a password weak and strong. The purpose of this website is to encourage users to make their
+      passwords stronger so that their accounts are less vulnerable to being compromised. <br/> <br/>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:275px">
-
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-
-  <!-- Top header -->
-  <header class="w3-container w3-xlarge">
-    <br/>
-    <h2 class="w3-left">Welcome to Password School</h2> <br/>
-  </header>
-
-  <!-- Image header -->
-  <div class="w3-display-container w3-container">
-    <div class="w3-display-topleft" style="padding:24px 48px">
-    </div>
-  </div>
-
-  <div class="w3-container w3-main" id="h">
-    <hr/>
-    <p> Password school is a website created by Michael Rodriguez to inform users about
-      what makes a password weak and strong. The purpose of this website is to encourage
-      users to make their passwords stronger so that their accounts are less vulnerable to
-      being compromised. <br/> <br/>
       The GitHub repository for Password School can be found
-      <a href="https://github.com/MichaelDriguez/password-school" target="_blank" class="hover"><b>here</b></a>.
-    </p> <br/>
-
-    <h3>Disclaimer</h3>
-    <hr/>
-    <p>These tools, as well as the information taught on this site, are made for
+      <a href="https://github.com/MichaelDriguez/password-school" target="_blank" class="hover:text-green-1"><b>here</b></a>. <br/> <br/>
+    </p>
+    <h1 class="text-4xl lg:text-5xl text-left text-green-1 font-bold ml-10 lg:ml-80 mr-10">Disclaimer</h1>
+    <br> <hr class="border-2 border-solid border-beige my-3 mx-auto ml-10 lg:ml-80 w-1/2"/>
+    <p class="bg-green-4 text-xl lg:text-2xl text-left text-beige mt-6 mb-6 ml-10 mr-10 lg:ml-80 lg:mr-96">
+      These tools, as well as the information taught on this site, are made for
       <b><i>educational purposes only</i></b>. <br/> <br/> Although this site does not
       store, log, or remember the passwords that you enter (for the password strength checker),
       by using these tools and/or applying the information taught on this site, you
@@ -84,31 +54,23 @@
       Furthermore, while my website offers general guidance on what makes a weak and
       strong password, it does not guarantee the strength or effectiveness of your passwords.
       For an accurate analysis of your password's strength, consult a cybersecurity professional
-      and follow best practices when creating and storing passwords.</p>
-
-    <br/>
-
-    <!-- Footer -->
-    <footer class="w3-main" id="footer">
-      <h3>Contact Information</h3>
-      <hr/>
-      <p><i class="fa fa-fw fa-envelope"></i> mlrodriguez2003@outlook.com</p>
-      <p><a href="https://github.com/MichaelDriguez" target="_blank"
-            class="hover"> <i class="fa fa-github w3-large"></i>  GitHub</a></p>
-      <p><a href="https://www.linkedin.com/in/michael-driguez/" target="_blank"
-            class="hover"> <i class="fa fa-linkedin w3-large"></i> LinkedIn</a></p>
-      <br>
-    </footer>
+      and follow best practices when creating and storing passwords. <br/> <br/>
+    </p>
+    <h1 class="text-4xl lg:text-5xl text-left text-green-1 font-bold ml-10 lg:ml-80 mr-10">Get Started</h1>
+    <br> <hr class="border-2 border-solid border-beige my-3 mx-auto ml-10 lg:ml-80 w-1/2"/>
+    <p class="bg-green-4 text-xl lg:text-2xl text-left text-beige mt-6 mb-6 ml-10 mr-10 lg:ml-80 lg:mr-96">
+      Select a page from the list below. <br/> <br/>
+    <a href="./src/html/checker.html" target="_blank"
+    class="hover:text-green-1"><b>• Password Strength Checker</b></a> <br/>
+    <a href="./src/html/generator.html" target="_blank"
+       class="hover:text-green-1"><b>• Secure Password Generator</b></a> <br/>
+    <a href="./src/html/help.html" target="_blank"
+       class="hover:text-green-1"><b>• How to Make Your Passwords Secure</b></a> <br/>
+    <br> <br> <br> <br> <br> <br>
+    </p>
   </div>
 
-  <div class="w3-center w3-padding-24 bottom">Powered by
-    <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
-       target="_blank" class="hover">w3.css</a></div>
-
-  <!-- End page content -->
-</div>
-
-<script src="js/script.js"></script>
+<script src="src/js/script.js"></script>
 
 </body>
 </html>

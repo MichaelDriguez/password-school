@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <link href="../output.css" rel="stylesheet">
+</head>
+<style>
+  input::placeholder { /* Changes the color of "Enter password" */
+    color: beige;
+    opacity: 0.5;
+  }
+  input:focus { /* Removes the blue outline when entering password */
+    outline: none;
+  }
+  .input-field {
+    border-width: 3px;
+  }
+</style>
+<body class="bg-green-4">
+
+<!-- Sidebar/menu -->
+<nav class="border-beige border-2 hidden fixed top-10 lg:top-20 right-0 bg-green-3 text-xl lg:text-3xl text-green-1 text-right mr-8 mt-16 w-[225px] lg:w-[300px] p-4" id="mySidebar">
+  <h2><b>Password School</b></h2> <hr class="flex justify-end border-2 border-solid border-beige my-3"/>
+  <a href="../../index.html" class="hover:text-beige">Home / Disclaimer</a> <br class="mb-3"/>
+  <a href="checker.html" class="hover:text-beige">Password Strength Checker</a> <br class="mb-3"/>
+  <a href="generator.html" class="hover:text-beige">Password Generator</a> <br/>
+
+  <hr class="flex justify-end border-2 border-solid border-beige my-3"/>
+
+  <a href="help.html" class="hover:text-beige">How to Make Your Passwords Secure</a> <br/>
+
+  <hr class="flex justify-end border-2 border-solid border-beige my-3"/>
+
+  <a href="contact.html" class="hover:text-beige">Contact</a> <br/>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="fixed top-0 right-0 bg-green-4 w-full z-50 text-3xl text-green-1 text-right mr-8 pt-8 pb-8">
+  <a href="javascript:void(0)" class="text-right hover:text-beige" onclick="toggleSidebar()">☰</a>
+</header>
+
+<div class="bg-green-4 p-0 text-green-1">
+  <h1 class="text-4xl lg:text-5xl text-left font-bold ml-10 lg:ml-80 mr-10 mt-10">
+    <br> <br> <br> <br> <br> How Secure is Your Password?</h1> <br>
+  <div id="mainBackground" class ="ml-10 lg:ml-80 w-1/2 text-xs" style="padding: 2px;"></div>
+  <label for="inputField"></label><input type="text" id="inputField"
+    class="input-field text-xl lg:text-2xl ml-10 lg:ml-80 mr-10 bg-green-4
+    border-2 border-beige text-beige w-1/2" style="padding: 6px;" placeholder="Enter password">
+  <div id="output" class="text-beige text-xl lg:text-2xl text-left bg-green-4 mt-6 mb-6 ml-10 mr-10 lg:ml-80 lg:mr-96"></div>
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
